@@ -1,0 +1,14 @@
+<h2>Login Page</h2>
+{{#if indication}}
+    <p style="color:rgb(0, 19, 128)">{{indication}}</p>
+{{/if}}
+<form action="/auth/login/{{#if originalUrl}}{{originalUrl}}{{/if}}" method="post">
+    <label for="username">Username</label>
+    <input type="text" name="username" placeholder="username" required="true">
+    <label for="password">Password</label>
+    <input type="password" name="password" placeholder="******" required="true">
+    <button type="submit">Login</button>
+    {{#if error}}
+        <p style="color:red">{{error}}</p>
+    {{/if}}
+</form>
